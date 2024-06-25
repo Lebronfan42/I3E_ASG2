@@ -9,7 +9,11 @@ public class GameManager : MonoBehaviour
 
 	private int currentScore = 0;
 
+	private int ammoMinus = 0;
+
 	public TextMeshProUGUI scoreText;
+
+	public TextMeshProUGUI ammoCount;
 
 	public void Awake()
 
@@ -30,5 +34,11 @@ public class GameManager : MonoBehaviour
         currentScore += scoreToAdd;
 		scoreText.text = "Score: " + currentScore.ToString();
     } 
+
+	public void Ammo(int ammoSet)
+	{
+		ammoMinus = ammoSet - 1;
+		ammoCount.text = ammoMinus.ToString() + " / 30";
+	}
 
 }
