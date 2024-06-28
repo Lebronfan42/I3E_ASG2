@@ -11,6 +11,8 @@ public class Collectible : Interactable
 
     public int myScore = 5;
 
+    public int collectibleType;
+
 
     public void Collected()
     {
@@ -21,10 +23,28 @@ public class Collectible : Interactable
 
     public override void Interact(Player thePlayer)
     {
-        base.Interact(thePlayer);
-        GameManager.instance.IncreaseScore(myScore);
-        AudioSource.PlayClipAtPoint(collectAudio, transform.position, 1f);
-        Collected();
+        if (collectibleType == 1)
+        {
+            base.Interact(thePlayer);
+            GameManager.instance.IncreaseScoreOne(myScore);
+            AudioSource.PlayClipAtPoint(collectAudio, transform.position, 1f);
+            Collected();
+        }
+        if (collectibleType == 2)
+        {
+            base.Interact(thePlayer);
+            GameManager.instance.IncreaseScoreTwo(myScore);
+            AudioSource.PlayClipAtPoint(collectAudio, transform.position, 1f);
+            Collected();
+        }
+        if (collectibleType == 3)
+        {
+            base.Interact(thePlayer);
+            GameManager.instance.IncreaseScoreThree(myScore);
+            AudioSource.PlayClipAtPoint(collectAudio, transform.position, 1f);
+            Collected();
+        }
+        
     }
 
 

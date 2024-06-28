@@ -21,7 +21,7 @@ public class Gun : MonoBehaviour
     private bool isReloading = false;
     public GameObject weapons;
 
-    public Animator animator;
+    public Animator reloadAnimator;
 
     void Start()
     {
@@ -30,25 +30,30 @@ public class Gun : MonoBehaviour
 
     IEnumerator Reload()
     {
-        isReloading = true;
+        if(!isReloading)
+        {
+            isReloading = true;
 
-        Debug.Log("Reload Start");
-        //animator.SetBool("Reloading", true);
-        weapons.SetActive(false);
+            reloadAnimator.SetBool("Reloading", true);
+            //weapons.SetActive(false);
 
-        yield return new WaitForSeconds(reloadTime);
+            yield return new WaitForSeconds(reloadTime);
 
-        Debug.Log("Reload End");
-        //animator.SetBool("Reloading", false);
-        weapons.SetActive(true);
+            reloadAnimator.SetBool("Reloading", false);
+            //weapons.SetActive(true);
 
-        currentAmmo = maxAmmo;
-        GameManager.instance.Ammo(currentAmmo);
-        isReloading = false;
+            currentAmmo = maxAmmo;
+            GameManager.instance.Ammo(currentAmmo);
+            yield return new WaitForSeconds(0.2f);
+            isReloading = false;
+
+        }
+        
     }
 
     void OnShootLeft()
     {
+   
         currentAmmo --;
 
         if (isReloading)
@@ -81,6 +86,7 @@ public class Gun : MonoBehaviour
             GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impactGO, 2f);
         }
+        
     }
 
 
@@ -110,7 +116,7 @@ public class Gun : MonoBehaviour
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
 
-            Enemy enemy = hit.transform.GetComponent<Enemy>();
+            EnemyAI enemy = hit.transform.GetComponent<EnemyAI>();
             if (enemy != null)
             {
                 enemy.TakeDamage(damage);

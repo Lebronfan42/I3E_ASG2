@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
 {
 
     Interactable currentInteractable;
+    
+
 
     [SerializeField]
     Transform playerCamera;
@@ -45,11 +47,22 @@ public class Player : MonoBehaviour
         currentInteractable = newInteractable;
     }
 
+    public void TakeDamage(float amount)
+    {
+        Debug.Log("TakeDamage");
+        GameManager.instance.TakeDamageUI(amount);
+
+    }
     void OnInteract()
     {      
         if(currentInteractable != null)
         {           
             currentInteractable.Interact(this);
         }
+    }
+
+    void OnInventory()
+    {
+        GameManager.instance.OpenInventory();
     }
 }

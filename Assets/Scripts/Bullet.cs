@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+        Player playerHealth = other.GetComponent<Player>();
         if (playerHealth != null)
         {
             playerHealth.TakeDamage(damage); // Apply damage to the player

@@ -42,18 +42,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Interact",
-                    "type": "Button",
-                    "id": "b420d6ee-706c-47f5-aa12-7e19d4bc4ef6",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "ShootLeft",
                     "type": "Button",
-                    "id": "02b5bfb1-e9e3-4e5e-bccd-e5bbb5f6f64e",
+                    "id": "11dc05f2-fc29-4ed4-933d-7c2249c595b9",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -62,7 +53,7 @@
                 {
                     "name": "ShootRight",
                     "type": "Button",
-                    "id": "35d397b1-e5e1-4c2b-a7cf-8c861d5548d1",
+                    "id": "8cb1cf97-a753-4fef-b851-4f26ff737f8a",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -71,7 +62,25 @@
                 {
                     "name": "Reload",
                     "type": "Button",
-                    "id": "98741290-eacb-4c45-b674-89c0f5209176",
+                    "id": "58c3907f-2065-45a4-8a26-50c5d9566779",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Inventory",
+                    "type": "Button",
+                    "id": "608fc3e2-47de-473e-a103-de5b71e9f152",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "2b27b9ca-b6df-4f4a-a9dd-4751908a750c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -257,18 +266,7 @@
                 },
                 {
                     "name": "",
-                    "id": "d11f2924-130a-457f-8c80-b95eae1a2db8",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Interact",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "caab65e3-ee74-4267-bdeb-99eb11fade53",
+                    "id": "0d09980d-00ec-4f6b-a073-1d41a029db04",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
@@ -279,7 +277,7 @@
                 },
                 {
                     "name": "",
-                    "id": "c0ba3f4e-b5d3-44aa-9f3a-68e2f672fa62",
+                    "id": "bfb5b8db-5d42-4450-bc4d-e174c62cdf23",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
@@ -290,12 +288,34 @@
                 },
                 {
                     "name": "",
-                    "id": "d5a99a11-80a6-4c3b-bc9f-089186602c08",
+                    "id": "d2c1e9d7-3058-4f4a-b846-8543b05b37d0",
                     "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Reload",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "43faf29c-182e-47ca-b139-ac531e71de51",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4d5ad391-4154-4a0f-8c81-c2f87a80ca2f",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

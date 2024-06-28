@@ -3,6 +3,9 @@ using System.Collections;
 
 public class EnemyAI : MonoBehaviour
 {
+    [SerializeField]
+	private GameObject healthToSpawn;
+
     public Transform player; // Reference to the player
     public float detectionRange = 20f; // Detection range for the enemy
     public float shootingRange = 15f; // Range within which the enemy can shoot
@@ -24,7 +27,7 @@ public class EnemyAI : MonoBehaviour
             // Rotate to face the player
             Vector3 direction = (player.position - transform.position).normalized;
             Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 100f);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
 
             // Check if the player is within shooting range
             if (distanceToPlayer <= shootingRange && Time.time >= nextTimeToFire)
@@ -49,7 +52,14 @@ public class EnemyAI : MonoBehaviour
 
 	void Die()
 	{
+        SpawnHealth();
 		Destroy (gameObject);
+	}
+
+    void SpawnHealth()
+	{
+		Instantiate(healthToSpawn, transform.position, healthToSpawn.transform.rotation);
+		
 	}
 
     IEnumerator Shoot(Vector3 direction)
