@@ -69615,6 +69615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthToSpawn: {fileID: 2775028396212574999, guid: 794d39021caaf0744a686f0ec0021012,
     type: 3}
+  enemyDeathAudio: {fileID: 8300000, guid: 75227b546ac9d074584dd4b9c4444f60, type: 3}
   player: {fileID: 0}
   detectionRange: 30
   shootingRange: 30
